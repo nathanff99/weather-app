@@ -1,6 +1,17 @@
 .header {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    gap: 0.625em;
+    padding: 1.25em;
     background-color: $secondary-color;
+
+    &__icon {
+        width: 2.5em;
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 1.25em;
+    }
 }
