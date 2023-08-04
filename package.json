@@ -1,0 +1,10 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass scss:css -w"
+  },
+  "devDependencies": {
+    "sass": "^1.39.0"
+  }
+}

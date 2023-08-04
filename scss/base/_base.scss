@@ -1,0 +1,18 @@
+$primary-color: #44a3ff;
+$secondary-color: #eaecef;
+$text-color: #35455e;
+$font-family: 'Roboto', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+}
+
+a {
+    text-decoration: none;
+}
