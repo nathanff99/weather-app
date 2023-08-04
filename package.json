@@ -4,7 +4,7 @@
   "scripts": {
     "sass": "sass scss:css -w"
   },
-  "devDependencies": {
-    "sass": "^1.39.0"
+  "dependencies": {
+    "sass": "^1.64.2"
   }
 }
