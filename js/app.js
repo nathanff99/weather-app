@@ -66,7 +66,6 @@ cityInput.addEventListener("keyup", (e) => {
 
 
 //Daily
-
 const daily = document.querySelector('#daily')
 
 
@@ -76,7 +75,6 @@ const getWeatherDaily = async (city) => {
     const data = await res.json();
     return data
 }
-
 
 
 const showDaily = async (city) => {
@@ -127,7 +125,7 @@ const showHour = async (city) => {
         let imgElement = document.createElement('img');
 
         hElement.textContent = data.list[i].dt_txt.substring(11,16)
-        pElement.textContent = Math.round(data.list[i].main.temp)
+        pElement.textContent = Math.round(data.list[i].main.temp) + "º C"
 
         divElement.appendChild(hElement);
         divElement.appendChild(pElement);
