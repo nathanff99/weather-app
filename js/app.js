@@ -18,7 +18,7 @@ const lista = document.getElementById('cityLocal');
 
 const btnLocal = document.getElementById('recent')
 
-btnLocal.addEventListener('click', ()=>{
+btnLocal.addEventListener('click', ()=>{     
     console.log(lista.value);
 })
 
@@ -100,6 +100,7 @@ searchBtn.addEventListener('click', (e) => {
     showDaily(city);
     showHour(city);    
     local()
+    console.log(city);
 })
 
 cityInput.addEventListener("keyup", (e) => {
@@ -109,6 +110,17 @@ cityInput.addEventListener("keyup", (e) => {
         showWeatherData(city);
     }
 });
+
+btnLocal.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const localSt = lista.value;    
+    showWeatherData(localSt);
+    removeDivs();
+    showDaily(localSt);
+    showHour(localSt);     
+    console.log(localSt);   
+})
 
 
 //Daily
