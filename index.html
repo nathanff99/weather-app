@@ -8,22 +8,35 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnEes7n3IMGiT8soYSGejbWUGeOL7r6NY&libraries=places&callback=initMap">
-</script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnEes7n3IMGiT8soYSGejbWUGeOL7r6NY&libraries=places&callback=initMap">
+        </script>
     <script src="./js/app.js" defer></script>
 
 </head>
 
 <body>
     <header>
-        <div>
-            <select name="" id="cityLocal"></select>
+        <div class="logo">
+            <i class="fa-solid fa-umbrella"></i>
+            <h1>
+                Wheater APP
+            </h1>
         </div>
-        <div class="form">
-            <input type="text" name="" id="city-input" placeholder="Type the city">
-            <button id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+        <div class="nav">
+            <div>
+                <label for="">Last searches</label>
+                <select name="" id="cityLocal" class="searchinp"></select>
+                <button class="searchbtn" id="recent">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="form">
+                <input type="text" name="" id="city-input" placeholder="Type the city" class="searchinp">
+                <button id="search" class="searchbtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
         </div>
     </header>
     <main>

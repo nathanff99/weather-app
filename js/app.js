@@ -14,6 +14,13 @@ const umidityElement = document.querySelector("#umidity span");
 const windElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data");
+const lista = document.getElementById('cityLocal');
+
+const btnLocal = document.getElementById('recent')
+
+btnLocal.addEventListener('click', ()=>{
+    console.log(lista.value);
+})
 
 
 //Auto complete Google
@@ -38,7 +45,7 @@ function local() {
 }
 
 function showLocal() {
-    const lista = document.getElementById('cityLocal');
+    
     const dateSave = localStorage.getItem('cityStorage');
     if (dateSave) {
         var dadosConvertidos = JSON.parse(dateSave);
@@ -57,7 +64,6 @@ document.addEventListener('DOMContentLoaded', showLocal);
 //Functions
 const getWeatherData = async (city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=en`;
-
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
     return data
@@ -88,7 +94,7 @@ const showWeatherData = async (city) => {
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
-    const city = cityInput.value;
+    const city = cityInput.value;    
     showWeatherData(city);
     removeDivs();
     showDaily(city);
