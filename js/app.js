@@ -15,6 +15,45 @@ const windElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data");
 
+
+//Auto complete Google
+let autocomplete
+
+function initMap() {
+    autocomplete = new google.maps.places.Autocomplete(cityInput),
+    {
+        types: ['cities']
+    }
+}
+
+//Local Storage
+function local() {
+    let cityStorage = []
+    if (localStorage.hasOwnProperty('cityStorage')) {
+        cityStorage = JSON.parse(localStorage.getItem('cityStorage'))    }
+
+    cityStorage.push({city: cityInput.value})
+
+    localStorage.setItem("cityStorage", JSON.stringify(cityStorage))
+}
+
+function showLocal() {
+    const lista = document.getElementById('cityLocal');
+    const dateSave = localStorage.getItem('cityStorage');
+    if (dateSave) {
+        var dadosConvertidos = JSON.parse(dateSave);
+        dadosConvertidos.forEach(function(item) {
+            var option = document.createElement('option');
+            option.value = item.city;
+            option.textContent = item.city;
+            lista.appendChild(option);
+        });
+    }
+}
+
+// Chamar a função para popular a lista suspensa assim que a página for carregada
+document.addEventListener('DOMContentLoaded', showLocal);
+
 //Functions
 const getWeatherData = async (city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=en`;
@@ -51,9 +90,10 @@ searchBtn.addEventListener('click', (e) => {
 
     const city = cityInput.value;
     showWeatherData(city);
-    removeDivs()
-    showDaily(city)
-    showHour(city)
+    removeDivs();
+    showDaily(city);
+    showHour(city);    
+    local()
 })
 
 cityInput.addEventListener("keyup", (e) => {
@@ -81,13 +121,13 @@ const showDaily = async (city) => {
     const data = await getWeatherDaily(city);
     console.log(data);
 
-    for (let i = 7; i < 40; i+=8) {
+    for (let i = 7; i < 40; i += 8) {
         let divElement = document.createElement('div');
         let hElement = document.createElement('h3')
         let pElement = document.createElement('p');
         let imgElement = document.createElement('img');
 
-        hElement.textContent = data.list[i].dt_txt.substring(5,10)
+        hElement.textContent = data.list[i].dt_txt.substring(5, 10)
         pElement.textContent = Math.round(data.list[i].main.temp) + "ºC"
 
         divElement.appendChild(hElement);
@@ -103,7 +143,7 @@ function removeDivs() {
     while (daily.firstChild) {
         daily.removeChild(daily.firstChild);
     }
-    while(hour.firstChild){
+    while (hour.firstChild) {
         hour.removeChild(hour.firstChild)
     }
 }
@@ -118,13 +158,13 @@ const showHour = async (city) => {
     const data = await getWeatherDaily(city);
     console.log(data);
 
-    for (let i = 0; i <8; i++) {
+    for (let i = 0; i < 8; i++) {
         let divElement = document.createElement('div');
         let hElement = document.createElement('h3')
         let pElement = document.createElement('p');
         let imgElement = document.createElement('img');
 
-        hElement.textContent = data.list[i].dt_txt.substring(11,16)
+        hElement.textContent = data.list[i].dt_txt.substring(11, 16)
         pElement.textContent = Math.round(data.list[i].main.temp) + "º C"
 
         divElement.appendChild(hElement);
