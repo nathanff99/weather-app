@@ -5,8 +5,8 @@ const initFavoriteToggle = () => {
             latitude: this.getAttribute('data-latitude'),
             longitude: this.getAttribute('data-longitude')
         }
-        toggleFavoritePlace(place);
-    });
+        toggleFavoritePlace(place)
+    })
 }
 
 const toggleFavoritePlace = (place) => {
@@ -37,7 +37,7 @@ const initSelectListener = () => {
 
         loadWheaterByPlace('weather', `&lat=${place.latitude}&lon=${place.longitude}&units=metric`, place.address)
         loadWheaterByPlace('forecast', `&lat=${place.latitude}&lon=${place.longitude}&units=metric&exclude=current`, place.address)
-    });
+    })
 }
 
 const checkFavoriteClass = (address) => {
@@ -53,14 +53,14 @@ const checkFavoriteClass = (address) => {
 
 const updateFavoritesSelect = () => {
     const favoritePlaces = JSON.parse(localStorage.getItem('favoritePlaces')) ?? []
-    const select = document.getElementById('favoritePlaces');
+    const select = document.getElementById('favoritePlaces')
 
     select.innerHTML = '<option value="">Favorite places</option>'
 
     favoritePlaces.forEach(place => {
-        const option = document.createElement('option');
-        option.value = place.address;
-        option.textContent = place.address;
-        select.appendChild(option);
+        const option = document.createElement('option')
+        option.value = place.address
+        option.textContent = place.address
+        select.appendChild(option)
     })
 }

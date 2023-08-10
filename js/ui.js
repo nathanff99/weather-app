@@ -12,11 +12,11 @@ const toggleFavoriteIcon = (action) => {
   const toggleFavoriteButton = document.getElementById("toggleFavorite")
 
   if (action === 'delete') {
-    toggleFavoriteButton.classList.remove('fa-solid');
-    toggleFavoriteButton.classList.add('fa-regular');
+    toggleFavoriteButton.classList.remove('fa-solid')
+    toggleFavoriteButton.classList.add('fa-regular')
   } else {
-    toggleFavoriteButton.classList.add('fa-solid');
-    toggleFavoriteButton.classList.remove('fa-regular');
+    toggleFavoriteButton.classList.add('fa-solid')
+    toggleFavoriteButton.classList.remove('fa-regular')
   }
 }
 
