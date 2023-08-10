@@ -24,11 +24,11 @@
 
   <main>
     <section class="filters custom-container">
-      <select id="favorite_cities" class="filters__input">
-        <option value="">Favorite cities</option>
+      <select id="favoritePlaces" class="filters__input">
+        <option value="">Favorite places</option>
       </select>
 
-      <input class="filters__input" type="text" id="city" placeholder="Search by city" onClick="this.select();">
+      <input id="place" class="filters__input" type="text" placeholder="Search by place" onClick="this.select();">
     </section>
 
     <section id="current-weather" class="custom-container">
@@ -45,8 +45,9 @@
 </body>
 
 <script src="js/wheater.js"></script>
-<script src="js/ui.js"></script>
 <script src="js/places.js"></script>
+<script src="js/favorite.js"></script>
+<script src="js/ui.js"></script>
 <script src="js/app.js"></script>
 
 </html>
