@@ -14,7 +14,7 @@ const loadWheaterByPlace = (endpoint, params, address = 'Vancouver, BC, Canada')
                 } else {
                     groupForecastByDay(response.list) // Calls the function to group the weather forecast data by day
                 }
-            }, 1000);
+            }, 1000)
         })
         .catch((error) => console.error("Error fetching wheater: ", error))
 }
