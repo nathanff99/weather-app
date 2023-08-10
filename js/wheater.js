@@ -4,6 +4,8 @@ const WEATHER_API_KEY = 'c4855aefeaa47320d405a3180bae8dc0'
 
 // Function that loads weather data based on endpoint and given parameters
 const loadWheaterByPlace = (endpoint, params, address = 'Vancouver, BC, Canada') => {
+    setLoading('.current-weather')
+
     // Makes a fetch request to the Weather API, concatenating the API URL, endpoint, API key, and parameters
     fetch(`${WEATHER_API_URL}${endpoint}?appid=${WEATHER_API_KEY}${params}`)
         .then((response) => response.json()) // Convert data to json
@@ -46,12 +48,10 @@ const groupForecastByDay = (weatherList) => {
         const minTemperature = Math.min(...dayData.map(item => item.main.temp_min))
         const maxTemperature = Math.max(...dayData.map(item => item.main.temp_max))
         const description = dayData[0].weather[0].description
-
-        console.log(`Date: ${dayKey} - Max: ${Math.floor(maxTemperature)} - Min: ${Math.floor(minTemperature)} - Description: ${description}`)
     })
 }
 
-// Loads default city on page load
+// Loads default place on page load
 const loadDefaultWheater = () => {
     // Vancouver, BC, Canada
     const defaultPlace = {
