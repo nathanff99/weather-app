@@ -2,24 +2,19 @@
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/'
 const WEATHER_API_KEY = 'c4855aefeaa47320d405a3180bae8dc0'
 
-// Start variables to storage the values.
-let currentWheater = {}
-let forecastWheater = []
-let groupedWheater = []
-
-
 // Function that loads weather data based on endpoint and given parameters
-const loadWheaterByPlace = (endpoint, params) => {
+const loadWheaterByPlace = (endpoint, params, address = 'Vancouver, BC, Canada') => {
     // Makes a fetch request to the Weather API, concatenating the API URL, endpoint, API key, and parameters
     fetch(`${WEATHER_API_URL}${endpoint}?appid=${WEATHER_API_KEY}${params}`)
         .then((response) => response.json()) // Convert data to json
         .then((response) => {
-            if (endpoint === 'weather') {
-                currentWheater = response // Stores current weather data
-            } else {
-                forecastWheater = response.list // Stores weather forecast data
-                groupForecastByDay(response.list) // Calls the function to group the weather forecast data by day
-            }
+            setTimeout(() => {
+                if (endpoint === 'weather') {
+                    setCurrentWheaterHTML(response, address)
+                } else {
+                    groupForecastByDay(response.list) // Calls the function to group the weather forecast data by day
+                }
+            }, 1000);
         })
         .catch((error) => console.error("Error fetching wheater: ", error))
 }
@@ -53,14 +48,6 @@ const groupForecastByDay = (weatherList) => {
         const description = dayData[0].weather[0].description
 
         console.log(`Date: ${dayKey} - Max: ${Math.floor(maxTemperature)} - Min: ${Math.floor(minTemperature)} - Description: ${description}`)
-
-        // Adds the grouped temperature and description data to the groupedWheater array
-        groupedWheater.push({
-            date: dayKey,
-            temp_min: Math.floor(minTemperature),
-            temp_max: Math.floor(maxTemperature),
-            description: description
-        })
     })
 }
 

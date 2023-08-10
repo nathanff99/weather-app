@@ -1,0 +1,52 @@
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    min-height: 343px;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+
+    &__favorite {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 2em;
+        cursor: pointer;
+        color: $primary-color;
+    }
+
+    &__icon {
+        filter: drop-shadow(0px 0px 4px $text-color);
+    }
+
+    &__title {
+        font-size: 2.5em;
+        font-weight: 900;
+    }
+
+    &__temperature {
+        font-size: 2em;
+    }
+
+    &__data {
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+        text-align: center;
+
+        span {
+            width: 100%;
+            margin: 5px;
+
+            @media (min-width: 768px) {
+                width: 40%;
+            }
+        }
+    }
+}

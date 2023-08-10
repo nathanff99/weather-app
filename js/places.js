@@ -6,13 +6,15 @@ const initPlaceInput = () => {
 
     // Adds an event listener for when a location is selected in Autocomplete
     autoComplete.addListener('place_changed', () => {
+        setLoading('.current-weather')
+
         const place = autoComplete.getPlace() // Get selected location from Autocomplete
 
         // Checks if the location has geometry information (latitude and longitude)
         if (place.geometry) {
             // Loads weather data for the selected location using loadWeatherByPlace function
-            loadWheaterByPlace('weather', `&lat=${place.geometry.location.lat()}&lon=${place.geometry.location.lng()}`)
-            loadWheaterByPlace('forecast', `&lat=${place.geometry.location.lat()}&lon=${place.geometry.location.lng()}&units=metric&exclude=current`)
+            loadWheaterByPlace('weather', `&lat=${place.geometry.location.lat()}&lon=${place.geometry.location.lng()}&units=metric`, place.formatted_address)
+            loadWheaterByPlace('forecast', `&lat=${place.geometry.location.lat()}&lon=${place.geometry.location.lng()}&units=metric&exclude=current`, place.formatted_address)
         } else {
             console.log("Invalid place.")
         }
