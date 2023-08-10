@@ -8,10 +8,22 @@ const setLoading = (selector) => {
   document.querySelector(selector).innerHTML = loadingHTML
 }
 
+const toggleFavoriteIcon = (action) => {
+  const toggleFavoriteButton = document.getElementById("toggleFavorite")
+
+  if (action === 'delete') {
+    toggleFavoriteButton.classList.remove('fa-solid');
+    toggleFavoriteButton.classList.add('fa-regular');
+  } else {
+    toggleFavoriteButton.classList.add('fa-solid');
+    toggleFavoriteButton.classList.remove('fa-regular');
+  }
+}
+
 const setCurrentWheaterHTML = (data, address) => {
   const currentWeatherHTML = `
   <div class="current-weather">
-    <i class="current-weather__favorite fa-regular fa-star"></i>
+    <i id="toggleFavorite" class="current-weather__favorite ${checkFavoriteClass(address)} fa-star" data-address="${address}" data-latitude="${data.coord.lat}" data-longitude="${data.coord.lon}"></i>
     <img class="current-weather__icon" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
     <span class="current-weather__date">
       ${formatDate(new Date())}
@@ -43,6 +55,7 @@ const setCurrentWheaterHTML = (data, address) => {
 `
 
   document.querySelector('#current-weather').innerHTML = currentWeatherHTML
+  initFavoriteToggle()
 }
 
 const formatDate = (date) => {
