@@ -2,12 +2,12 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  /* background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%); */
-  /* display: flex; */
+  background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);
+ 
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -74,7 +74,8 @@ header {
 /* Clima */
 #weather-data {
   background-color: rgba(0, 0, 0, 0.4);
-  margin: 2vh 30vw;
+  width: 30vw;
+  margin: 2vh auto;
   color: white;
 }
 

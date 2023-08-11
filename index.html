@@ -7,24 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnEes7n3IMGiT8soYSGejbWUGeOL7r6NY&libraries=places&callback=initMap">
         </script>
-    <script src="./js/app.js" defer></script>
+    <script src="./js/app.js" defer type="module"></script>
+    <script src="./js/main.js"></script>
 
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <i class="fa-solid fa-umbrella"></i>
+            <div class="icons">
+                <i class="fa-solid fa-umbrella"></i>
+                <i class="fa-solid fa-sun" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-cloud" style="color: #0000ff;"></i>
+            </div>
+
             <h1>
                 Wheater APP
             </h1>
         </div>
         <div class="nav">
-            <div>                
+            <div>
                 <select name="" id="cityLocal" class="searchinp">
                     <option value="" disabled selected hidden>Last Searches</option>
                 </select>
@@ -45,6 +54,7 @@
             <h2>
                 <i class="fa-solid fa-location-dot"></i>
                 <span id="city"></span>
+                <i class="fa-regular fa-star" id="star"></i>
             </h2>
             <p id="temperature"><span></span>&deg;C</p>
             <div id="description-container">
