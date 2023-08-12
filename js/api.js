@@ -12,6 +12,7 @@ export const getWeatherData = async (city) => {
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=en`;
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
+    console.log(data);
     return data
 }
 
@@ -31,7 +32,7 @@ export const showWeatherData = async (city) => {
 
     document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
     document.body.style.backgroundSize = "cover"
-    document.body.style.backgroundPosition = 'center'
+    document.body.style.backgroundPosition = 'center'    
 
     weatherContainer.classList.remove('hide')
 }

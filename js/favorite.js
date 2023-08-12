@@ -4,11 +4,9 @@ const cityLocal = document.querySelector("#cityLocal");
 
 export const favorite = () => {
     favoriteStar.addEventListener('click', (e) => {
-        e.preventDefault();
-        // const inputValue = cityInput.value;
+        e.preventDefault();        
         const google = cityInput.value.trim();
-        const favorite = cityLocal.value
-        console.log(google, favorite);
+        const favorite = cityLocal.value        
         saveFav(google, favorite)
     })
 }
@@ -16,9 +14,7 @@ export const favorite = () => {
 function saveFav(google, favorite) {
     const cityGoogle = cityInput.value.split(',')[0].trim();
     const cityStg = cityLocal.value.split(',')[0].trim();
-    const cityTitle = document.querySelector('#city').textContent;
-
-    console.log(cityGoogle, cityStg, cityTitle);
+    const cityTitle = document.querySelector('#city').textContent;    
 
     let cityStorage = [];
     if (localStorage.getItem('cityStorage')) {
@@ -33,14 +29,12 @@ function saveFav(google, favorite) {
                 cityStorage.push({ city });
                 localStorage.setItem('cityStorage', JSON.stringify(cityStorage));
                 favoriteStar.classList.add('fa-solid');
-                favoriteStar.classList.remove('fa-regular');
-                console.log('Cidade salva:', city);
+                favoriteStar.classList.remove('fa-regular');                
             } else {
                 cityStorage.splice(existingCityIndex, 1);
                 localStorage.setItem('cityStorage', JSON.stringify(cityStorage));
                 favoriteStar.classList.add('fa-regular');
-                favoriteStar.classList.remove('fa-solid');
-                console.log('Cidade removida:', city);
+                favoriteStar.classList.remove('fa-solid');                
             }
         };
 

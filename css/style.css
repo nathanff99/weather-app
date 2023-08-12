@@ -6,8 +6,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);
- 
+  background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%); 
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -20,9 +19,15 @@ header {
   text-align: center;
 }
 
+
+
 .logo{
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 10px;
+  width: fit-content;
+  padding: .3rem;
+  margin: 0 auto;
 }
 
 .nav{
@@ -75,7 +80,7 @@ header {
 #weather-data {
   background-color: rgba(0, 0, 0, 0.4);
   width: 30vw;
-  margin: 2vh auto;
+  margin: 0 auto;
   color: white;
 }
 
@@ -83,7 +88,7 @@ header {
 #error-message,
 #loader,
 #suggestions {
-  padding-top: 1.5rem;
+  padding-top: .5rem;
   text-align: center;
 }
 
@@ -119,7 +124,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.6rem 0;
+  margin: 0.2rem 0;
 }
 
 #description {
@@ -152,38 +157,137 @@ header {
 
 
 
-#daily {
-  display: flex !important;
-  justify-content: space-evenly;
-  color: white;
-  text-align: center;
-
+#daily {  
+  color: white;  
+  width: 95%;  
+  margin: .5rem auto;  
+  border-radius: 5px;
+  padding-bottom: 1rem;
 }
 
-#daily div {
-  width: 15%;
+#daily h2{
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem 0;
+  width: 47.5%;
+}
+
+.hour5title{    
+  display: flex;
+  justify-content: space-evenly; 
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 0;    
+  text-align: center;
+}
+
+.div5hour{
+  width: 15%;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 #daily div p {
   margin-top: 1rem;
 }
 
-#hour {
-  margin-top: 2rem;
-  display: flex !important;
-  justify-content: space-evenly;
-  color: white;
-  text-align: center;
+#hour {  
+  color: white;  
+  width: 95%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+#hour h2{
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 47.5%;
 }
 
 #hour div {
   padding: 1rem 0;
   background-color: rgba(0, 0, 0, 0.7);
-  width: 10%;
+  border-radius: 5px;
 }
 
 #hour div p {
   margin-top: 1rem;
+}
+
+.hour3title{
+  display: flex;  
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.hour3title div{
+  text-align: center;
+  width: 20%;  
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0 .2rem; 
+}
+
+@media screen and (max-width: 768px) {
+  .nav{
+    display: block;
+    margin: 1rem auto;
+  }   
+
+  .form{
+    margin: 0 auto;
+  }
+
+  .favorites{
+    width: 100%;
+  }
+
+  .favorites select{
+    width: 70%;
+  }
+
+  .favorites button{
+    width: 20%;
+  }
+
+  .hour5title{
+    width: 90%;
+    margin: 0 auto;;
+    flex-wrap: wrap;
+  }
+
+  .div5hour{
+    width: 40%;
+    margin-bottom: 1rem;
+  }
+
+  .hour3title{
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .hour3title div{
+    width: 40%;
+    margin-bottom: 1rem;
+  }
+
+.logo{
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+#weather-data{
+  width: 90%;
+  margin: 0 auto;
+}
+
+  #daily h2{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #hour h2{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
