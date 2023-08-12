@@ -35,17 +35,17 @@ const UI = {
       ${address}
       </h2>
       <span class="current-weather__temperature">
-      ${data.main.temp}°C
+      ${Math.round(data.main.temp)}°C
       </span>
       <span class="current-weather__feels-like">
-        Feels like ${data.main.feels_like}°C
+        Feels like ${Math.round(data.main.feels_like)}°C
       </span>
       <div class="current-weather__data">
         <span class="current-weather__temperature-low">
-          <i class="fa-solid fa-temperature-low"></i> Min: ${data.main.temp_min}°C
+          <i class="fa-solid fa-temperature-low"></i> Min: ${Math.round(data.main.temp_min)}°C
         </span>
         <span class="current-weather__temperature-high">
-          <i class="fa-solid fa-temperature-high"></i> Max: ${data.main.temp_max}°C
+          <i class="fa-solid fa-temperature-high"></i> Max: ${Math.round(data.main.temp_max)}°C
         </span>
         <span class="current-weather__temperature-humidity">
           <i class="fa-solid fa-droplet"></i> Humidity: ${data.main.humidity}%
