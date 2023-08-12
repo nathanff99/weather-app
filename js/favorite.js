@@ -3,7 +3,7 @@ import weather from "./weather.js";
 
 const favorite = {
     initToggle: function () {
-        document.getElementById('toggleFavorite').addEventListener('click', () => {
+        document.getElementById('toggleFavorite').addEventListener('click', (event) => {
             const button = event.currentTarget;
 
             const place = {
