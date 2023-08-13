@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 1.25em;
+    padding: 1.25em 0;
 
     @media (min-width: 768px) {
         justify-content: space-between;
@@ -13,14 +13,14 @@
         border: 0;
         background-color: $secondary-color;
         font-size: 1.25em;
-        height: 40px;
-        padding: 10px;
+        height: 2.5em;
+        padding: 0.625em;
         border-radius: $border-radius;
         color: $text-color;
         width: 100%;
 
-        @media (min-width: 768px) {
-            max-width: 320px;
+        @media (min-width: 992px) {
+            max-width: 20em;
         }
     }
 }
