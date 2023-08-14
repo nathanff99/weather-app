@@ -1,4 +1,4 @@
-import favorite from "./favorite.js";
+import favorite from "./favorite.js"
 
 const UI = {
   setLoading: function (selector) {
@@ -109,20 +109,20 @@ const UI = {
   formatDate: function (value, showHours = true) {
     const months = [
       "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
+    ]
 
-    const date = new Date(value);
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const period = hours >= 12 ? 'pm' : 'am';
+    const date = new Date(value)
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const period = hours >= 12 ? 'pm' : 'am'
 
-    const formattedHour = hours % 12 === 0 ? 12 : hours % 12;
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedHour = hours % 12 === 0 ? 12 : hours % 12
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
 
     if (showHours) {
-      return `${months[date.getMonth()]} ${date.getDate()}, ${formattedHour}:${formattedMinutes}${period}`;
+      return `${months[date.getMonth()]} ${date.getDate()}, ${formattedHour}:${formattedMinutes}${period}`
     } else {
-      return `${months[date.getMonth()]} ${date.getDate()}`;
+      return `${months[date.getMonth()]} ${date.getDate()}`
     }
   }
 }

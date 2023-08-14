@@ -1,4 +1,4 @@
-import UI from "./ui.js";
+import UI from "./ui.js"
 
 // OpenWeatherMap API config.
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/'
@@ -85,18 +85,18 @@ const weather = {
 
         for (const element of elements) {
             element.addEventListener('click', event => {
-                const clickedElement = event.currentTarget;
-                const date = clickedElement.getAttribute('data-date');
+                const clickedElement = event.currentTarget
+                const date = clickedElement.getAttribute('data-date')
 
-                this.groupByHours(date);
-            });
+                this.groupByHours(date)
+            })
         }
     },
 
     stopDayClickListener: function (elements) {
         for (const element of elements) {
-            element.removeEventListener('click', {}, false);
-        };
+            element.removeEventListener('click', {}, false)
+        }
     },
 
     // Loads default place on page load

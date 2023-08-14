@@ -1,4 +1,4 @@
-import weather from "./weather.js";
+import weather from "./weather.js"
 
 const places = {
     // Function that initializes the location entry (place)

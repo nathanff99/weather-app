@@ -1,10 +1,10 @@
-import UI from "./ui.js";
-import weather from "./weather.js";
+import UI from "./ui.js"
+import weather from "./weather.js"
 
 const favorite = {
     initToggle: function () {
         document.getElementById('toggleFavorite').addEventListener('click', (event) => {
-            const button = event.currentTarget;
+            const button = event.currentTarget
 
             const place = {
                 address: button.getAttribute('data-address'),
