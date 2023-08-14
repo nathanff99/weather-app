@@ -1,0 +1,31 @@
+.days {
+    width: 100%;
+
+    &__title {
+        margin-top: 2rem;
+    }
+
+    &__period {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 4rem;
+        padding: 2rem;
+        min-height: 15.625em;
+        background-color: $secondary-color;
+        border-radius: $border-radius;
+
+        &-each {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        &-icon {
+            max-width: 100%;
+            filter: drop-shadow(0px 0px 4px $text-color);
+        }
+    }
+}
